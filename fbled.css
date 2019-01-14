@@ -1,0 +1,48 @@
+header {
+  width:100%;
+  position:relative;
+  top:0;
+  left:0;
+  background-color:#006ec0;
+  color:white;
+  font-size:50px;
+  text-align:center;
+  font-family:Arial;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+
+
+header > img {
+  color:yellow;
+  font-size:33%;
+  float:left;
+  margin-left:30px;
+}
+
+body {
+  background-color:#f0eee6;
+  font-family: Arial;
+}
+
+div > form {
+  text-align:center;
+  border:solid gray 1px;
+  background:white;
+  width:33%;
+  padding:3%;
+  margin:10% 33% 10% 33%;
+}
+
+div > form > label {
+  display:block;
+  text-align:center;
+}
+
+div > form > button {
+  background-color:#006ec0;
+  border:0px; color:white;
+  font-size:23px;
+  min-width:100px;
+  padding:10px;
+}

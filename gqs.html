@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" type="image/x-ico" href="http://fritz.box/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="fbled.css" /> <title></title>
+    <script type="text/javascript"> 
+      function getQuerystring(key, default_) {
+        if (default_==null) default_="";
+        key = key.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+        var regex = new RegExp("[\\?&]"+key+"=([^&#]*)");
+        var qs = regex.exec(window.location.href);
+        if(qs == null || qs[1] == '')
+          return default_;
+        else
+          return qs[1];
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <img src="http://fritz.box/favicon.ico" width="32" height="32" alt="Keine Fritz!Box erkannt">Fritz!Box LEDs an/aus
+    </header>
+    <script type="text/javascript">
+      var sid_default="0123456789abcdef";
+      var url_default="http://fritz.box";
+      var sid=getQuerystring('sid',sid_default);
+      var url=decodeURIComponent(getQuerystring('url',url_default)); document.title = url; document.write('<div>' 
+        +'<form method=\"POST\" action=\"'+url+'/system/led_display.lua?sid='+sid+'\" name=\"main_form\">'
+        +'<label><input name=\"led_display\" id=\"uiViewLedDisplay0\" value=\"0\" type=\"radio\">LED-Anzeige an<\/label>'
+        +'<label><input name=\"led_display\" id=\"uiViewLedDisplay2\" value=\"2\" checked=\"checked\" type=\"radio\">LED-Anzeige aus<\/label>'
+        +'<input name=\"sid\" value=\"'+sid+'\" type=\"hidden\">'
+        +'<button type=\"submit\" id=\"uiApply\" name=\"apply\">Ok<\/button>'
+        +'<\/form>' 
+        +'<\/div>'); </script>
+    <noscript><h1>JavaScript disabled?!</h1></noscript>
+  </body>
+</html>
